@@ -3,6 +3,7 @@ Códigos de estudos em linguagem C, C# e C++
 
 # C
 Curso de C do programação descomplicada
+Curso de C da Udemy
 
 # C#
 
