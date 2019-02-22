@@ -6,6 +6,8 @@ Códigos de estudos em linguagem C, C# e C++
 
 2- Curso de C da Udemy
 
+3 - Atividades da UFRN e livros correlacionados
+
 ## C#
 
 ## C++
