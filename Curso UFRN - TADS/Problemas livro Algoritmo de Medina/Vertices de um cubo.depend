@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1550855011 source:c:\users\tatuedi\desktop\cursos\cursos de programação\curso de c\programação em c da ufrn\vertices de um cubo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1550855653 source:c:\users\tatuedi\desktop\cursos\cursos de programação\curso de c\programação em c da ufrn\numero na memoria de uma variavel.c
+	<stdio.h>
+	<stdlib.h>
+
