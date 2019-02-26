@@ -1,0 +1,15 @@
+Lista de Algoritmos
+
+1a) (A > C) e (C <= D)
+    (5 > 3) e (3 <= 6) = V e V = V
+1b) (A+B)> 10 ou (A+B)==(C+D)
+    (5+4)> 10 ou (5+4)==(3+6) = F ou V = V
+1c) (A>=C) ou (D>=C)
+    (5>=3) ou (6>=3) = V ou V = V
+
+2a) (3 * 3 > 10) ou (2 + 2 < 10) (V)
+2b) (10 != 5) ou (1 + 1 == 0) (V)
+2c) (2 + 3 >= 5) e (18 / 3 < 7) (V)
+2d) (1 + 1 == 0) e (0 – 1 > 0) (F)
+
+Questões 3 a 5 no codeblock
