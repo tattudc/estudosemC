@@ -6,61 +6,70 @@
 int main(){
     setlocale(LC_ALL,"");
     srand(time(NULL));
-    //DECLARA«√O DE VARI¡VEIS
+    //DECLARA√á√ÉO DE VARI√ÅVEIS
     int inicioJogo, i, escolhaJogador, escolhaIa, pontosPart, pontosJogador[5];
     char jogador[10];
 
     //INICIO JOGO
     do{
     chamadaTela();
-    printf("Bem vindo ao jogo! Selecione a opÁ„o desejada:\n1 - NOVO JOGO\n2 - RANKING\n3 - REGRAS\n4 - SAIR\n");
+    printf("Bem vindo ao jogo! Selecione a op√ß√£o desejada:\n1 - NOVO JOGO\n2 - RANKING\n3 - REGRAS\n4 - SAIR\n");
     scanf("%d", &inicioJogo);
 
     //INCIIO DE JOGO
     if(inicioJogo == 1){
-        printf("Ol·! Digite o nome do jogador: \n");
+        printf("Ol√°! Digite o nome do jogador: \n");
         scanf("%s", &jogador);
+        pontosPart = 0;
         for(i = 0; i < 10; i++){
             printf("Escolha 1 para Pedra, 2 para Papel e 3 para Tesoura\n");
             scanf("%d", &escolhaJogador);
             escolhaIa = rand()% 3 + 1;
-            if(escolhaJogador == escolhaIa){
-                printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
-                printf("Jogo empatado, 1 ponto!\n");
-                pontosPart = pontosPart + 1;
-            }
-            else{
-                if(escolhaJogador == 1 && escolhaIa == 2){
-                    printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
-                    printf("IA ganhou, 0 ponto!\n");
-                }
+            if(escolhaJogador == 1 || escolhaJogador == 2 || escolhaJogador == 3){
+				if(escolhaJogador == escolhaIa){
+                	printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
+                	printf("Jogo empatado, 1 ponto!\n\n");
+                	pontosPart = pontosPart + 1;
+            	}
+	            else{
+	                if(escolhaJogador == 1 && escolhaIa == 2){
+	                    printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
+	                    printf("IA ganhou, 0 ponto!\n\n");
+	                }
                 else if(escolhaJogador == 1 && escolhaIa == 3){
                     printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
-                    printf("VitÛria jogador, 3 ponto!\n");
+                    printf("Vit√≥ria jogador, 3 ponto!\n\n");
                     pontosPart = pontosPart + 3;
                 }
                 else if(escolhaJogador == 2 && escolhaIa == 1){
                     printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
-                    printf("VitÛria jogador, 3 ponto!\n");
+                    printf("Vit√≥ria jogador, 3 ponto!\n\n");
                     pontosPart = pontosPart + 3;
                 }
                 else if(escolhaJogador == 2 && escolhaIa == 3){
                     printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
-                    printf("IA ganhou, 0 ponto!\n");
+                    printf("IA ganhou, 0 ponto!\n\n");
                 }
                 else if(escolhaJogador == 3 && escolhaIa == 1){
                     printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
-                    printf("IA ganhour, 0 ponto!\n");
+                    printf("IA ganhour, 0 ponto!\n\n");
                 }
                 else if(escolhaJogador == 3 && escolhaIa == 2){
                     printf("Jogador escolheu %d e IA escolheu %d\n", escolhaJogador, escolhaIa);
-                    printf("VitÛria jogador, 3 ponto!\n");
+                    printf("Vit√≥ria jogador, 3 ponto!\n\n");
                     pontosPart = pontosPart + 3;
                 }
             }
-        }
+         }
+         	else{
+         		printf("Escolha errada! Vit√≥ria do IA\n0 pontos!\n");
+			 }
+       }
+        system("cls");
         printf("O jogador %s fez %d pontos\n", jogador, pontosPart);
-    }
+    	delay(10);
+    	system("cls");
+	}
     //RANKING
     else if(inicioJogo == 2){
 
@@ -76,7 +85,7 @@ int main(){
     }
     //DIGITO ERRADO
     else{
-        printf("OpÁ„o inv·lida\n");
+        printf("Op√ß√£o inv√°lida\n");
     }
 
     }while(inicioJogo != 4);
@@ -91,14 +100,14 @@ void chamadaTela(){
     printf("*********************************************************************************\n");
 }
 void regrasJogo(){
-    printf("Para se jogar Pedra, Papel e Tesoura, clica-se em NOVO JOGO e ser· iniciado uma rodada com 10 jogadas\n");
-    printf("O jogador deve escolher entre: Pedra = 1, Papel = 2 ou Tesoura = 3\nFeita a escolha o IA escolher· a dele\n");
-    printf("ApÛs as escolhas ser· decidido entre vitÛria, empate ou derrota. Lembrando que:\n");
+    printf("Para se jogar Pedra, Papel e Tesoura, clica-se em NOVO JOGO e ser√° iniciado uma rodada com 10 jogadas\n");
+    printf("O jogador deve escolher entre: Pedra = 1, Papel = 2 ou Tesoura = 3\nFeita a escolha o IA escolher√° a dele\n");
+    printf("Ap√≥s as escolhas ser√° decidido entre vit√≥ria, empate ou derrota. Lembrando que:\n");
     printf("Pedra perde para papel\nPedra ganha da tesoura\nPapel ganha de pedra\nPapel perde para tesoura\n");
     printf("Tesoura perde para pedra\nTesoura ganha de papel\n");
-    printf("Decidido o vencedor, perdedor ou empate o ranking subir· de acordo com o resultado, sendo que:\n");
-    printf("Vencedor soma 3 pontos no ranking, empate soma 1 ponto no ranking e o perdedor n„o ganha ponto\n");
-    delay(5);
+    printf("Decidido o vencedor, perdedor ou empate o ranking subir√° de acordo com o resultado, sendo que:\n");
+    printf("Vencedor soma 3 pontos no ranking, empate soma 1 ponto no ranking e o perdedor n√£o ganha ponto\n");
+    delay(30);
     system("cls");
 }
 
@@ -110,6 +119,6 @@ void delay(int number_of_seconds) {
 
 /*
 JOGO: PAPEL - PEDRA - TESOURA
-ALUNOS: TARCISIO, GUSTAVO, CLARA, SILMARA E NIEDSON
+ALUNOS: TARCISIO, GUSTAVO, CLARA, SILVANA E NIEDSON
 CRIADO EM 01 DE MAIO DE 2019
 */
