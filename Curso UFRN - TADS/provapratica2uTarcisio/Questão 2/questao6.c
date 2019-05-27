@@ -4,20 +4,17 @@
 
 int main(){
 char frase[100];
-int  cont;
+int  cont = 1, i;
 
 //Inserindo dados
 printf("Digite uma Frase: \n");
-fgets(frase, 100, stdin);
+gets(frase);
 
 //Comparando
-	for(int i = 0; i < strlen(frase); i++){
-		if((strcmp(frase, " ")) == 1)
+	for(i = 0; i < strlen(frase); i++){
+		if(frase[i] == ' ')
 			cont++;
-		if((strcmp(frase, "\0")) == 1)
-			cont++;
-		}
-		
+	}
 printf("A frase foi: %s\n", frase);
 printf("A quantidade de palavras na frase: %i\n", cont);
 
