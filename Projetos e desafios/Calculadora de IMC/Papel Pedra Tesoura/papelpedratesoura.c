@@ -18,6 +18,10 @@ int main(){
     //DECLARAÇÃO DE VARIÁVEIS
     int inicioJogo, i, escolhaJogador, escolhaIa, pontosJogador[5];
     struct jogadores jogador;
+    //Variável de save
+	FILE *arq_save; //Ponteiro com o arquivo save
+	arq_save = fopen("saveJogo.txt", "a"); //Abrindo
+	fclose(arq_save); //Fechando
     //INICIO JOGO
     do{
     chamadaTela();
@@ -29,6 +33,7 @@ int main(){
         printf("Olá! Digite o nome do jogador: \n");
         setbuf(stdin, NULL);
         fgets(jogador.nome, 50, stdin);
+        jogador.nome[strlen(jogador.nome)-1] = '\0';
         jogador.pontosPart = 0;
         for(i = 0; i < 10; i++){
             printf("Escolha 1 para Pedra, 2 para Papel, 3 para Tesoura, 4 para Lagarto e 5 para Spock\n");
@@ -139,12 +144,27 @@ int main(){
        }
         system("cls");
         printf("O jogador %s fez %d pontos\n", jogador.nome, jogador.pontosPart);
-    	delay(10);
+        //Salvando
+    	arq_save = fopen("saveJogo.txt", "a");
+    	fprintf(arq_save, "%s %i\n", jogador.nome, jogador.pontosPart);
+		//fprintf(arq_save, "%i", jogador.pontosPart);
+    	fclose(arq_save);
+    	printf("Dados salvos no ranking\n");
+		delay(1);
     	system("cls");
 	}
     //RANKING
     else if(inicioJogo == 2){
-
+    	system("cls");
+    	printf("RANKING\nNOME/PONTOS\n");
+    	//Lendo dados do save
+    	arq_save = fopen("saveJogo.txt", "rw");
+    	while(fgets(jogador.nome, 50, arq_save) != NULL){
+    		printf("%s", jogador.nome);
+		}
+		fclose(arq_save);
+		delay(10);
+		system("cls");
     }
     //REGRAS
     else if(inicioJogo == 3){
@@ -194,5 +214,5 @@ void delay(int number_of_seconds) {
 JOGO: PAPEL - PEDRA - TESOURA - SPOCK - LIZARD
 ALUNOS: TARCISIO DANTAS CÂMARA
 CRIADO EM 01 DE MAIO DE 2019
-MODIFICADO EM 04 DE JUNHO DE 2019
+MODIFICADO EM 04, 05 DE JUNHO DE 2019
 */
