@@ -1,16 +1,16 @@
-***JOGO - ALTERA��ES***
+***JOGO - ALTERAÇÕES***
 1 - (FEITO!)Incluir O lizard e spock
 2 - (FEITO!)Incluir uma Struct que inclua uma string e um inteiro
-3 - Incluir um sistema de arquivamento para salvar a struct atual
-4 - Fazer Sistema de Ranking
-5 - Corrigir Bugs
+3 - (FEITO!)Incluir um sistema de arquivamento para salvar a struct atual
+4 - (FEITO!)Fazer Sistema de Ranking
+5 - Ordenação
+6 - Corrigir Bugs
 
 1 - Pedra
 1/2 - Pedra/Papel - Perde
 1/3 - Pedra/Tesoura - Ganha
 1/4 - Pedra/Lagarto - Ganha
 1/5 - Pedra/Spock - Perde
-
 
 2 - Papel
 2/1 - Papel/Pedra - Ganha
@@ -35,3 +35,11 @@
 5/2 - SPOCK/Papel - Perde
 5/3 - SPOCK/Tesoura - Ganha
 5/4 - SPOCK/Lagarto - Perde
+
+LÓGICA DA ORDENAÇÃO
+(Tato 10\0
+Junin 15
+
+ordena a < b
+	troca pnts
+	troca nomes)
